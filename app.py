@@ -40,7 +40,6 @@ def stylize():
     input_img = request.args.get('input_img')
     model_get = request.args.get('style')
     print(model_get)
-    print("$$$$$$$$$$$$$$$$$$$$$$$$")
 
     content_image = utils.load_image(input_img)
     content_transform = transforms.Compose([
