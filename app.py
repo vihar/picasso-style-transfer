@@ -1,8 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 import re
-import torch
 from torchvision import transforms
-import torch.onnx
 import utils
 from transformer_net import TransformerNet
 from flask_dropzone import Dropzone
