@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 import re
+import torch
 from torchvision import transforms
 import utils
 from transformer_net import TransformerNet
