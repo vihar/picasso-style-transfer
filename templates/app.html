@@ -4,9 +4,17 @@
     <title></title>
 </head>
 <body>
-<form method="POST">
-    <input type="" name="imgurl">
-    <input action="/model" type="submit" name="post">
-</form>
+    <form method="POST">
+        <input  name="imgurl">
+
+        <select name="style">
+          <option value="saved_models/mosaic.pth">mosaic</option>
+          <option value="saved_models/candy.pth">candy</option>
+          <option value="saved_models/rain_princess.pth">rain_princess</option>
+          <option value="saved_models/udnie.pth">udnie</option>
+      </select>
+
+      <input action="/model" type="submit" name="post">
+  </form>
 </body>
 </html>

@@ -28,7 +28,8 @@ app.config['UPLOAD_FOLDER'] = IMAGE_FOLDER
 def upload():
     if request.method == 'POST':
         input_img = request.form['imgurl']
-        return redirect(url_for('stylize', input_img=input_img))
+        style = request.form['style']
+        return redirect(url_for('stylize', input_img=input_img, style=style))
 
     return render_template('app.html')
 
@@ -37,7 +38,9 @@ def upload():
 def stylize():
     device = torch.device("cpu")
     input_img = request.args.get('input_img')
-    print(input_img)
+    model_get = request.args.get('style')
+    print(model_get)
+    print("$$$$$$$$$$$$$$$$$$$$$$$$")
 
     content_image = utils.load_image(input_img)
     content_transform = transforms.Compose([
@@ -46,10 +49,10 @@ def stylize():
     ])
     content_image = content_transform(content_image)
     content_image = content_image.unsqueeze(0).to(device)
-
+    model_get = str(model_get)
     with torch.no_grad():
         style_model = TransformerNet()
-        state_dict = torch.load("saved_models/mosaic.pth")
+        state_dict = torch.load(model_get)
         for k in list(state_dict.keys()):
             if re.search(r'in\d+\.running_(mean|var)$', k):
                 del state_dict[k]
