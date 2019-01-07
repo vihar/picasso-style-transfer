@@ -25,9 +25,9 @@ python3 local.py eval --content-image sample/input.jpg --model saved_models/mosa
 ```
 
 <center>
-<img src="https://raw.githubusercontent.com/vihar/picasso-nst/master/sample/input.jpg?token=APjWVFDKPms6lwSJ7MLSlpXjs4kxJZdRks5cPEjdwA%3D%3D">
+<img src="https://raw.githubusercontent.com/vihar/picasso-style-transfer/master/sample/input.jpg?token=APjWVNM9aHzTsQ8tE3sGzkU_dmiAOluDks5cPEqIwA%3D%3D">
 
-<img src="https://raw.githubusercontent.com/vihar/picasso-nst/master/sample/output.jpg?token=APjWVB_D9dAAIu4ogzeb4Uf3BFChmN7Qks5cPEjtwA%3D%3D">
+<img src="https://raw.githubusercontent.com/vihar/picasso-style-transfer/master/sample/output.jpg?token=APjWVFhU2Mi2akV9XSkEwNBD2EZliTqpks5cPEqawA%3D%3D">
 </center>
 
 
