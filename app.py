@@ -1,15 +1,11 @@
 from flask import Flask, render_template
 
 import re
-
 import torch
-
 from torchvision import transforms
 import torch.onnx
-
 import utils
 from transformer_net import TransformerNet
-from vgg import Vgg16
 
 
 app = Flask(__name__)
@@ -36,7 +32,7 @@ def stylize():
         style_model.load_state_dict(state_dict)
         style_model.to(device)
         output = style_model(content_image).cpu()
-    utils.save_image("images/output-images/sample3.jpg", output[0])
+    utils.save_image("output.jpg", output[0])
     print("Done")
 
     return render_template("index.html")
