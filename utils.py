@@ -1,9 +1,12 @@
-import torch
+import requests
 from PIL import Image
+from io import BytesIO
 
 
 def load_image(filename, size=None, scale=None):
-    img = Image.open(filename)
+    response = requests.get(filename)
+    img = Image.open(BytesIO(response.content))
+    # img = Image.open(filename)
     if size is not None:
         img = img.resize((size, size), Image.ANTIALIAS)
     elif scale is not None:
